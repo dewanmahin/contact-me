@@ -48,7 +48,7 @@ const sendAllInfo = () => {
     const formDataStringified = JSON.stringify(formData);
     localStorage.setItem('formData', formDataStringified);
 }
-
+// Display data on ui and after reloading data will always appear on ui
 const displayDataOnUi = () => {
     const nameArea = document.getElementById('nameArea');
     const emailArea = document.getElementById('emailArea');
