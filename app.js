@@ -14,14 +14,17 @@ const sendInfo = (key) => {
     }else{
         localStorage.setItem('message', inputValue.value);
     }
+    displayDataOnUi();
 }
 // delete info from local storage
 const deleteInfo = (key) => {
-    localStorage.removeItem(key)
+    localStorage.removeItem(key);
+    displayDataOnUi();
 }
 // clear all local storage info
 const restAllInfo = () => {
     localStorage.clear();
+    displayDataOnUi();
 }
 // get obj if available or return an empty obj
 const formDataObj = () => {
@@ -45,3 +48,19 @@ const sendAllInfo = () => {
     const formDataStringified = JSON.stringify(formData);
     localStorage.setItem('formData', formDataStringified);
 }
+
+const displayDataOnUi = () => {
+    const nameArea = document.getElementById('nameArea');
+    const emailArea = document.getElementById('emailArea');
+    const messageArea = document.getElementById('messageArea');
+    // Name
+    const name = localStorage.getItem('name');
+    name ? nameArea.innerText = name : nameArea.innerText = '';
+    // Email
+    const email = localStorage.getItem('email');
+    email ? emailArea.innerText = email : emailArea.innerText = '';
+    // Message
+    const message = localStorage.getItem('message');
+    message ? messageArea.innerText = message : messageArea.innerText = '';
+}
+displayDataOnUi();
