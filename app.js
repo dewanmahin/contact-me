@@ -14,3 +14,7 @@ const sendInfo = (key) => {
         localStorage.setItem('message', inputValue);
     }
 }
+// delete info from local storage
+const deleteInfo = (key) => {
+    localStorage.removeItem(key)
+}
