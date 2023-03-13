@@ -18,3 +18,7 @@ const sendInfo = (key) => {
 const deleteInfo = (key) => {
     localStorage.removeItem(key)
 }
+// clear all local storage info
+const restAllInfo = () => {
+    localStorage.clear();
+}
